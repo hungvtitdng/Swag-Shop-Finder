@@ -1,0 +1,19 @@
+{
+  "name": "swag/plugin-shop-finder",
+  "description": "Demo plugin shop finder",
+  "type": "shopware-platform-plugin",
+  "license": "MIT",
+  "version": "1.0.0",
+  "autoload": {
+    "psr-4": {
+      "SwagShopFinder\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "SwagShopFinder\\SwagShopFinder",
+    "label": {
+      "de-DE": "Shop Finder",
+      "en-GB": "Shop Finder"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="SwagShopFinder\Core\Content\ShopFinder\ShopFinderDefinition">
+            <tag name="shopware.entity.definition" entity="swag_shop_finder"/>
+        </service>
+
+        <service id="SwagShopFinder\Core\Api\DataDemoController" public="true">
+            <argument id="country.repository" type="service"/>
+            <argument id="swag_shop_finder.repository" type="service"/>
+
+            <call method="setContainer">
+                <argument id="service_container" type="service"/>
+            </call>
+        </service>
+
+        <service id="SwagShopFinder\Storefront\Subscriber\FooterSubscriber">
+            <argument id="Shopware\Core\System\SystemConfig\SystemConfigService" type="service"/>
+            <argument id="swag_shop_finder.repository" type="service"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+    </services>
+</container>

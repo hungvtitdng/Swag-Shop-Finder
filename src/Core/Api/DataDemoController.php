@@ -60,7 +60,7 @@ class DataDemoController extends AbstractController
             ];
         }
 
-        $this->shopFinderRepository->upsert($data, $context);
+        $this->shopFinderRepository->create($data, $context);
 
         return new Response('', Response::HTTP_NO_CONTENT);
     }

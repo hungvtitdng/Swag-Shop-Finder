@@ -1,7 +1,8 @@
 {% sw_extends '@Storefront/storefront/layout/footer/footer.html.twig' %}
 
 {% block layout_footer_inner_container %}
-
-    {{ dump() }}
-    <h2>hung vo</h2> check in
+    {{ dump(page.footer.extensions) }}
+    {% if page.footer.extensions.swag_shop_finder %}
+        {% sw_include '@Storefront/layout/footer/shop-finder.html.twig' %}
+    {% endif%}
 {% endblock %}

@@ -2,7 +2,6 @@
 
 namespace SwagShopFinder\Core\Content\ShopFinder;
 
-use _HumbugBox221ad6f1b81f\phpDocumentor\Reflection\Types\Boolean;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\BoolField;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\FkField;
@@ -51,8 +50,8 @@ class ShopFinderDefinition extends EntityDefinition
             new ManyToOneAssociationField(
                 'country',
                 'country_id',
-                'id',
-                CountryDefinition::class
+                CountryDefinition::class,
+                'id'
             )
         ]);
     }

@@ -6,9 +6,8 @@ use Shopware\Core\Framework\Context;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityRepositoryInterface;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
-use Shopware\Recovery\Common\Service\SystemConfigService;
+use Shopware\Core\System\SystemConfig\SystemConfigService;
 use Shopware\Storefront\Pagelet\Footer\FooterPageletLoadedEvent;
-use Shopware\Storefront\Pagelet\Footer\FooterPageletLoader;
 use SwagShopFinder\Core\Content\ShopFinder\ShopFinderCollection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -36,7 +35,7 @@ class FooterSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return [
-            FooterPageletLoader::class => 'onFooterPageletLoaded'
+            FooterPageletLoadedEvent::class => 'onFooterPageletLoaded'
         ];
     }
 
